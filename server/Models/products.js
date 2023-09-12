@@ -13,21 +13,21 @@ var productSchema = new mongoose.Schema({
     },
     featured:{
         type:Boolean,
-        required:true,
+        default:false,
      
+    },
+    company : {
+        type : String ,
+        enum : {
+          values : ['ikea' , 'liddy' , 'caressa' , 'marcos'] ,
+          message : '{VALUE} is not supported ',
+        } 
     },
      rating:{
         type:Number,
         default:4.5,
      
     },
-    company : {
-        type : String ,
-        enum : {
-          values :    ['brand1' , 'brand2' , 'brand3' , 'brand4'] ,
-          message :' {VALUE} is not supported ',
-        } 
-    }
   
 },
 {timestamps : true}
